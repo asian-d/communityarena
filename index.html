@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Community Arena</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Main Header Section */
+        header {
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('https://img.freepik.com/premium-photo/empty-basketball-court-indoor-stadium-with-ai-generated_144089-4362.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: -1;
+            transition: background 1s ease-in-out;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: fadeIn 2s ease-in-out;
+            margin: 0;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 300;
+            animation: fadeIn 3s ease-in-out;
+            animation-delay: 1s;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            padding: 15px 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px 30px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(90deg, #ff6347, #0073e6);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Parallax Section */
+        .parallax {
+            background: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9zci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zMF9zY2VuZV9vZl8zZF9pbGx1c3RyYXRpb25fYV9hbWVyaWNhbl9zY2hvb2xfZ183MDQ4Mzg0ZC1kYTE4LTRlMDctOWJjZC0zNDE3MDFkMmEyM2NfMS5qcGc.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+            z-index: -1;
+        }
+
+        section {
+            padding: 80px 20px;
+            margin-top: 50px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 48px;
+            text-align: center;
+            color: #333;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h3 {
+            color: #0073e6;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Feature Box Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Button Styles */
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6347;
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background-color: #e53e2f;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Booking Form */
+        #booking iframe {
+            width: 100%;
+            height: 1188px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .contact-info {
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 16px;
+        }
+
+        /* Social Media Icons */
+        ul.social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-left: 0;
+        }
+
+        ul.social-links li {
+            font-size: 24px;
+        }
+
+        ul.social-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        ul.social-links a:hover {
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Parallax Section -->
+    <div class="parallax">
+        <header>
+            <h1>Community Arena</h1>
+            <p>Where events come alive. Book our versatile space for your next big event.</p>
+        </header>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About the Arena</h2>
+        <p>Our state-of-the-art arena accommodates 3,500 guests. From sporting events to concerts and trade shows, it’s the perfect venue for any occasion. With top-notch facilities and a versatile space, our arena is ready to host your next big event.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="https://cdn.dribbble.com/users/5263864/screenshots/17335977/media/25627cfbe654b197479cc68f9ce2cde1.gif" alt="Seating">
+                <h3>Sample Seating</h3>
+                <p>3,500 seats to accommodate a large audience comfortably for various events.</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.freepik.com/free-vector/cartoon-coworking-space-illustration_23-2148819269.jpg" alt="Modern Facilities">
+                <h3>Modern Facilities</h3>
+                <p>High-tech sound systems, lighting, and amenities ensure a top-quality experience.</p>
+            </div>
+            <div class="feature">
+                <img src="https://camo.githubusercontent.com/5d306edff2804efd87889559464d9643be173adbc453e06d5855d4275798c035/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a396d2d5744644c5f6a6930316247626a456e757445772e676966" alt="Flexible Setup">
+                <h3>Flexible Setup</h3>
+                <p>Customizable seating and layouts to meet the unique needs of each event.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <h2>Book Your Event</h2>
+        <p>Ready to book our arena for your next big event? Reach out to us for availability and pricing!</p>
+        <a href="javascript:void(0)" class="cta-button" onclick="document.getElementById('booking-form').style.display = 'block';">Book Now</a>
+        
+        <!-- Hidden Google Form iframe -->
+        <div id="booking-form" style="display:none;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7lIGCbrOxZK78hoiLSP3kzay60DLsJhjJ9uWV69xMF-cBJg/viewform?embedded=true" width="640" height="1188" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact">
+            <div class="contact-info">
+                <h3>Our Address</h3>
+                <p>123 Arena Lane, Cityville, State, 12345</p>
+            </div>
+            <div class="contact-info">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/arena" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/arena" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com/arena" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Community Arena | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
